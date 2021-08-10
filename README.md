@@ -18,7 +18,7 @@ Also, all the pokemons' information had to come from <a href="https://pokeapi.co
 
 3- Wait for completion, then write "npm start"
 
-This must be done for the <a href="https://github.com/LeonardoRosales1485/pi-dogs-front/">FrontEnd</a> of this project as well
+This must be done for the <a href="https://github.com/Salvapantallado/PI-Pokemon-FrontEnd">FrontEnd</a> of this project as well
 
 # Back End Known Issues
 
