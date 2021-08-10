@@ -12,7 +12,7 @@ server.name = "API";
 
 const REQUESTS =
   process.env.DATABASE_URL !== undefined
-    ? "https://pi-pokemon-front.vercel.app"
+    ? "https://pi-pokemon-front-end.vercel.app"
     : "http://localhost:3000";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
