@@ -1,6 +1,19 @@
 const server = require("./src/app.js");
-const PORT = process.env.PORT || 3001;
+const { conn, Type } = require("./src/db.js");
+const axios = require("axios");
+const { POKETYPE_API_URL } = require("./constants");
 
-server.listen(PORT, () => {
-  console.log(`App is running on ${PORT}`);
+// Syncing all the models at once.
+conn.sync({ force: true }).then(() => {
+  server.listen(3001, () => {
+    console.log("%s listening at 3001"); // eslint-disable-line no-console
+    axios.get(POKETYPE_API_URL).then((element) => {
+      element.data.results.forEach((el) =>
+        Type.create({
+          name: el.name,
+          id: el.id,
+        })
+      );
+    });
+  });
 });
